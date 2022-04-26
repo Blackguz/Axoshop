@@ -212,3 +212,58 @@ img {
     background-color: var(--primary);
     color: var(--blanco);
 }
+
+/* Aprende a jugar index */
+.aprende {
+    background-image: linear-gradient(to right, rgb(0 0 0 / .65), rgb(0 0 0 / .65)), url('../img/aprende.jpg');
+    padding: 10rem 0;
+    margin-top: 10rem;
+    background-size: cover;
+    background-position: 50%;
+}
+
+@media (min-width: 768px) {
+    .aprende_grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.aprende__contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .aprende__contenido {
+        grid-column: 2 /3;
+    }
+}
+
+.aprende__texto {
+    color: var(--blanco);
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+.aprende_enlace {
+    color: var(--blanco);
+    margin-top: 2rem;
+    display: inline-block;
+    border: 2px solid var(--primary);
+    text-decoration: none;
+    padding: 1rem 5rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+
+.aprende_enlace:hover {
+    background-color: var(--primary);
+    color: var(--blanco);
+}
+
