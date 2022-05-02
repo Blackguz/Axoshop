@@ -1,59 +1,69 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axoshop</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="css/app.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {% block titulo %}
+    {% endblock titulo %}
+  </title>
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
 </head>
+
 <body>
 
-    <header class="header">
-        <div class="header__contenedor">
-            <div class="header__barra">
-                <a href="/">
-                    <img class="header__logo" src="img/logo.png" alt="imagen logo">
-                </a>
+  <header class="header">
+    <div class="header__contenedor">
+      <div class="header__barra">
+        <a href="/">
+          <img class="header__logo" src="{% static 'img/logo.png' %}" alt="imagen logo">
+        </a>
 
-                <nav class="navegacion">
-                    <a class="navegacion__enlace" href="index.html">Inicio</a>
-                    <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
-                    <a class="navegacion__enlace" href="comunidad.html">Comunidad</a>
-                    <a class="navegacion__enlace" href="tienda.html">Tienda</a>
-                    <a class="navegacion__enlace" href="login.html">Iniciar sesion</a>
-                </nav>
-            </div><!--.header-barra-->
+        <nav class="navegacion">
+          <a class="navegacion__enlace" href="{% url 'core:index' %}">Inicio</a>
+          <a class="navegacion__enlace" href="{% url 'core:nosotros' %}">Nosotros</a>
+          <a class="navegacion__enlace" href="{% url 'core:comunidad' %}">Comunidad</a>
+          <a class="navegacion__enlace" href="{% url 'core:tienda' %}">Tienda</a>
+          <a class="navegacion__enlace" href="{% url 'usuarios:login' %}">Iniciar sesion</a>
+        </nav>
+      </div>
+      <!--.header-barra-->
 
-            <div class="modelo">
-                <h1 class="modelo__nombre">Gatito apestoso</h1>
-                <p class="modelo__descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, dolorum voluptatem fuga illum nisi saepe, repellat laudantium accusantium doloremque harum</p>
-                <p class="modelo__precio">$150.50</p>
-                <a class="modelo__enlace" href="producto.html">Ver Producto</a>
-            </div>
-        </div>
+      <div class="modelo">
+        <h1 class="modelo__nombre">Gatito apestoso</h1>
+        <p class="modelo__descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, dolorum
+          voluptatem fuga illum nisi saepe, repellat laudantium accusantium doloremque harum</p>
+        <p class="modelo__precio">$150.50</p>
+        <a class="modelo__enlace" href="{% url 'core:producto' %}">Ver Producto</a>
+      </div>
+    </div>
 
-        <img class="header__axoshop" src="img/header_axo.png" alt="imagen header axoshop">
-    </header>
+    <img class="header__axoshop" src="{% static 'img/header_axo.png' %}" alt="imagen header axoshop">
+  </header>
 
+  {% block contenido %}
+  {% endblock contenido %}
 
+  <footer class="footer">
+    <div class="footer__contenedor footer__contenido">
+      <nav class="footer__nav">
+        <a class="footer__enlace" href="{% url 'core:index' %}">Inicio</a>
+        <a class="footer__enlace" href="{% url 'core:index' %}">Nosotros</a>
+        <a class="footer__enlace" href="{% url 'core:comunidad' %}">Comunidad</a>
+        <a class="footer__enlace" href="{% url 'core:index' %}">Tienda</a>
+      </nav>
 
-    <footer class="footer">
-        <div class="footer__contenedor footer__contenido">
-            <nav class="footer__nav">
-                <a class="footer__enlace" href="index.html">Inicio</a>
-                <a class="footer__enlace" href="index.html">Nosotros</a>
-                <a class="footer__enlace" href="comunidad.html">Comunidad</a>
-                <a class="footer__enlace" href="index.html">Tienda</a>
-            </nav>
-
-            <p class="footer__copyright">Todos los derechos reservados</p>
-        </div>
-    </footer>
+      <p class="footer__copyright">Todos los derechos reservados</p>
+    </div>
+  </footer>
 
 </body>
+
 </html>
