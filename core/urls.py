@@ -10,4 +10,5 @@ urlpatterns = [
     path('comunidad', views.comunidad, name='comunidad'),
     path('tienda', views.tienda, name='tienda'),
     path('producto', views.producto, name='producto'),
+    path('lobby', views.lobby, name='lobby'),
 ]

@@ -18,3 +18,6 @@ def producto(request):
 
 def entrada(request):
     return render(request, 'entrada.html')
+
+def lobby(request):
+    return render(request, 'lobby.html')
