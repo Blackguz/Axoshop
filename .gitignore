@@ -1,0 +1,12 @@
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+.env
+media/
+
+Axoshop/__pycache__/
+core/__pycache__/
+usuarios/__pycache__/
+Axoshop/__pycache__/urls.cpython-38.pyc
