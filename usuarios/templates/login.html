@@ -15,14 +15,21 @@
     <img class="avatar" src="{% static 'img/header_axo.png' %}" alt="logo axoshop">
     <h1>Inicia sesión</h1>
 
-    <form action="">
+    {% if form.errors %}
+      <div class="alert alert-warning">
+        Verifica tus datos de acceso.
+      </div>
+    {% endif %} 
+
+    <form method="post">
+      {% csrf_token %}
       <!-- USERNAME -->
       <label for="username">Nombre de usuario</label>
-      <input type="text" placeholder="Usuario"></input>
+      <input type="text" name="username" placeholder="Usuario"></input>
 
       <!-- PASSWORD -->
       <label for="password">Contraseña</label>
-      <input type="password" placeholder="Contraseña"></input>
+      <input type="password" name = "password" placeholder="Contraseña"></input>
 
       <input type="submit" value="Iniciar sesion">
 
