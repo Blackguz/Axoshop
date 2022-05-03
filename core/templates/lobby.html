@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'css/chat.css' %}">
+{% endblock extracss %}
+
+{% block contenido %}
+<div id="messages" class="messages">
+</div>
+
+<form id="form">
+  <input type="text" name="message">
+</form>
+{% endblock contenido %}
+
+{% block scripts %}
+<script type="text/javascript">
+  let url = `ws://${window.location.host}/ws/socket-server/`
+
+  const chatSocket = new WebSocket(url)
+
+  chatSocket.onmessage = function (e) {
+    let data = JSON.parse(e.data)
+    console.log('Data:', data)
+
+    if (data.type === 'chat') {
+      let messages = document.getElementById('messages')
+
+      if (data.user === '{{request.user}}') {
+        messages.insertAdjacentHTML('afterbegin', `
+        <div class="bubbleWrapper">
+          <div class="inlineContainer own">
+            <img class="inlineIcon"
+              src="https://www.pinclipart.com/picdir/middle/205-2059398_blinkk-en-mac-app-store-ninja-icon-transparent.png">
+            <div class="ownBubble own">
+              <b>Tú</b><br>
+              ${data.message}
+            </div>
+          </div><span class="own">${data.time}</span>
+        </div>
+      `)
+      } else {
+        messages.insertAdjacentHTML('afterbegin', `
+        <div class="bubbleWrapper">
+          <div class="inlineContainer">
+            <img class="inlineIcon" src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png">
+            <div class="otherBubble other">
+              <b>${data.user}</b><br>
+              ${data.message}
+            </div>
+          </div><span class="other">${data.time}</span>
+        </div>
+      `)
+
+      }
+    }
+  }
+
+  let form = document.getElementById('form')
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    let message = e.target.message.value
+    chatSocket.send(JSON.stringify({
+      'message': message,
+      'user': '{{user}}',
+    }))
+    form.reset()
+  })
+
+</script>
+{% endblock scripts %}

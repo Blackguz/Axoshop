@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<main class="contenedor">
+  <div class="producto">
+    <img class="producto__imagen" src="{% static 'img/gatitoApestoso.jpg' %}" alt="imagen producto">
+
+    <div class="producto__contenido">
+      <h3 class="producto__nombre">Gatito Apestoso</h3>
+      <p class="producto__descripcion">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem praesentium
+        quam dolores eveniet</p>
+      <p class="producto__precio">$150.50</p>
+
+      <form class="producto__formulario">
+        <label class="producto__label">Cantidad:</label>
+        <select class="producto__cantidad">
+          <option value="">-- Seleccione --</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+
+        <input type="submit" class="producto__agregar-carrito" value="Agregar al Carrito">
+      </form>
+    </div>
+  </div>
+  <!--./producto-->
+</main>
+{% endblock %}

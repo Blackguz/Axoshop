@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<main class="contenedor">
+  <h2 class="heading">Nuestra Comunidad</h2>
+
+  <div class="comunidad__contenedor comunidad__grid comunidad__grid--pagina">
+    <article class="entrada">
+      <img class="entrada__imagen" src="{% static 'img/comunidad_01.jpg' %}">
+
+      <div class="entrada__contenido">
+        <h3 class="entrada__titulo">¿Y cual es tu queso favorito?</h3>
+        <p class="entrada__fecha">20 de enero del 2022</p>
+        <p class="entrada__texto"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nesciunt, maxime,
+          maiores error doloribus enim voluptate nihil magnam quia neque porro repellat optio eveniet est ad explicabo
+          odit vitae nam?</p>
+
+        <a class="entrada__enlace" href="{% url 'core:entrada' %}">Leer articulo</a>
+      </div>
+    </article>
+    <!--./Entrada comunidad-->
+
+    <article class="entrada">
+      <img class="entrada__imagen" src="{% static 'img/comunidad_02.jpg' %}">
+
+      <div class="entrada__contenido">
+        <h3 class="entrada__titulo">kompadre khe es ejo?</h3>
+        <p class="entrada__fecha">23 de febrero del 2022</p>
+        <p class="entrada__texto"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nesciunt, maxime,
+          maiores error doloribus enim voluptate nihil magnam quia neque porro repellat optio eveniet est ad explicabo
+          odit vitae nam?</p>
+
+        <a class="entrada__enlace" href="{% url 'core:entrada' %}">Leer articulo</a>
+      </div>
+    </article>
+    <!--./Entrada comunidad-->
+
+    <!--./Entrada comunidad-->
+  </div>
+
+
+
+</main>
+{% endblock contenido %}
