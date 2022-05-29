@@ -19,3 +19,4 @@ enlacesMenu.forEach(enlace => {
         iconoMenu.classList.replace("bx-menu", "bx-x")
     })
 })
+

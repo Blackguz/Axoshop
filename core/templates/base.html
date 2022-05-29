@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/app.css' %}">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -32,6 +33,7 @@
         <nav class="navegacion">
           <a class="navegacion__enlace" href="{% url 'core:index' %}">Inicio</a>
           <a class="navegacion__enlace" href="{% url 'core:nosotros' %}">Nosotros</a>
+          <a class="navegacion__enlace" href="#team">Equipo de trabajo</a>
           <a class="navegacion__enlace" href="{% url 'core:comunidad' %}">Comunidad</a>
           <a class="navegacion__enlace" href="{% url 'core:lobby' %}">Lobby chat</a>
           <a class="navegacion__enlace" href="{% url 'core:tienda' %}">Tienda</a>
@@ -69,6 +71,7 @@
   </footer>
 
   {% block scripts %}
+  
   {% endblock scripts %}
 
 </body>
