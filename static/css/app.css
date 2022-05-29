@@ -597,6 +597,10 @@ img {
     color: var(--blanco);
 }
 
+.team__heading{
+    margin-top: 0;
+}
+
 .team i {
     color: var(--blanco);
     margin-left: 2rem;
@@ -729,6 +733,22 @@ img {
 
 .login-box a:hover {
     color: var(--primary);
+}
+
+.services{
+    display: flex;
+    width: 100%;
+    margin: 100px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-block{
+    width: 450px;
+    height: 150px;
+    padding: 20px;
+    background-color: var(--primary);
+    margin: 50px;
 }
 
 /* ADMINISTRACIÓN */

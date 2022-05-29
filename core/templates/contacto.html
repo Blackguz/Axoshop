@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<section class="seccion_contacto">
+  <h2 class="aprende__heading">Contacto</h2>
+
+  <form class="formulario">
+    <fieldset>
+      <legend>Contactános llenando todos los campos</legend>
+
+      <div class="contenedor-campos">
+        <div class="campo">
+          <label>Nombre</label>
+          <input class="input-text" type="text" placeholder="Tu Nombre">
+        </div>
+
+        <div class="campo">
+          <label>Teléfono</label>
+          <input class="input-text" type="tel" placeholder="Tu Teléfono">
+        </div>
+
+        <div class="campo">
+          <label>Correo</label>
+          <input class="input-text" type="email" placeholder="Tu Email">
+        </div>
+
+        <div class="campo">
+          <label>Mensaje</label>
+          <textarea class="input-text"></textarea>
+        </div>
+      </div> <!-- .contenedor-campos -->
+
+      <div class="alinear-derecha flex">
+        <input class="boton w-sm-100" type="submit" value="Enviar">
+      </div>
+    </fieldset>
+  </form>
+</section>
+
+<section class="seccion_mapa">
+  <div id="map" style="height: 400px">
+
+  </div>
+</section>
+
+<section class="datos_contacto">
+  <div class="comunidad__contenedor comunidad__grid">
+    <article class="entrada">
+      <div class="entrada__contenido">
+        <img class="entrada__imagen" src="https://www.picng.com/upload/phone/png_phone_33172.png"
+          style="max-width: 50px; max-height: 50px;">
+
+        <h3 class="entrada__titulo">Telefono</h3>
+        <p class="entrada__texto"> 4949425874</p>
+      </div>
+    </article>
+    <!--./datos-->
+
+    <article class="entrada">
+      <div class="entrada__contenido">
+        <img class="entrada__imagen" src="https://www.pngmart.com/files/7/E-Mail-PNG-Clipart.png"
+          style="max-width: 50px; max-height: 50px;">
+
+        <h3 class="entrada__titulo">Correo</h3>
+        <p class="entrada__texto"> axoshop_contact@axo.com</p>
+      </div>
+    </article>
+    <!--./datos-->
+
+    <article class="entrada">
+      <div class="entrada__contenido">
+        <img class="entrada__imagen" src="https://www.pngall.com/wp-content/uploads/4/Pin-PNG.png"
+          style="max-width: 50px; max-height: 50px;">
+
+        <h3 class="entrada__titulo">Direccion</h3>
+        <p class="entrada__texto">Calle videojuegos #50 Colonia centro Zacatecas, Zacatecas. CP 98855</p>
+      </div>
+    </article>
+    <!--./datos-->
+
+
+    <article class="entrada">
+      <div class="entrada__contenido">
+        <img class="entrada__imagen" src="https://icon-library.com/images/owner-icon-png/owner-icon-png-3.jpg"
+          style="max-width: 50px; max-height: 50px;">
+
+        <h3 class="entrada__titulo">Team</h3>
+        <p class="entrada__texto">Elías Beltran</p>
+        <p class="entrada__texto">Román Guzmán</p>
+        <p class="entrada__texto">Jorge Luis Díaz</p>
+        <p class="entrada__texto">Juventino Aguilar</p>
+      </div>
+    </article>
+    <!--./datos-->
+
+  </div>
+</section>
+{% endblock contenido %}
+
+{% block scripts %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+     crossorigin=""></script>
+<script src="{% static 'js/map.js' %}"></script>
+{% endblock scripts %}

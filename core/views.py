@@ -7,6 +7,15 @@ def index(request):
 def nosotros(request):
     return render(request, 'nosotros.html')
 
+def contacto(request):
+    return render(request, 'contacto.html')
+
+def recurso_humano(request):
+    return render(request, 'recurso_humano.html')
+
+def servicios(request):
+    return render(request, 'servicios.html')
+
 def comunidad(request):
     return render(request, 'comunidad.html')
 
