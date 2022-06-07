@@ -1,12 +1,12 @@
 /* Apartado de mapa */
-var map = L.map('map').setView([51.505, -0.09], 13);
+var map = L.map('map').setView([22.7693347, -102.6472768], 17);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+L.marker([22.7693347, -102.6472768]).addTo(map)
+    .bindPopup('Oficinas de Axolud.')
     .openPopup();
 
 /* Fin apartado de mapa */

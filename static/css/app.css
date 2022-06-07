@@ -227,6 +227,10 @@ img {
 }
 
 /* Productos */
+.productos {
+    height: 600px;
+}
+
 .productos__grid {
     display: grid;
     gap: 4rem;
